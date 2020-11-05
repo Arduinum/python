@@ -21,7 +21,9 @@ while True:
         number_user = int(number_user)
         if number_user in rating_list:
             index_item = rating_list.index(number_user)
-            rating_list.insert(index_item, number_user)
+            rating_list.reverse() # добавлена данная строка
+            rating_list.insert((index_item - 1), number_user) # исправлена данная строка
+            rating_list.reverse() # добавлена данная строка
             print(f'рейтинг: {rating_list}')
         elif min(rating_list) > number_user:
             rating_list.append(number_user)
